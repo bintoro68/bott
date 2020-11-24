@@ -56,7 +56,7 @@ module.exports = msgHandler = async (client, message) => {
                 Iv: '[❗] Link yang anda kirim tidak valid!'
             }
         }
-        const apiKey = 'API-KEY' // apikey you can get it at https://mhankbarbar.herokuapp.com/api
+        const apiKey = 'qKF5WI4Sk3kC11WQ1VD9' // apikey you can get it at https://mhankbarbar.herokuapp.com/api
         const time = moment(t * 1000).format('DD/MM HH:mm:ss')
         const botNumber = await client.getHostNumber()
         const blockNumber = await client.getBlockedIds()
@@ -136,7 +136,7 @@ module.exports = msgHandler = async (client, message) => {
             break
         case '!donasi':
         case '!donate':
-            client.sendLinkWithAutoPreview(from, 'https://saweria.co/donate/mhankbarbar', donate)
+            client.sendLinkWithAutoPreview(from, 'https://saweria.co/donate/anker2412', donate)
             break
         case '!tts':
             if (args.length === 1) return client.reply(from, 'Kirim perintah *!tts [id, en, jp, ar] [teks]*, contoh *!tts id halo semua*')
@@ -176,7 +176,7 @@ module.exports = msgHandler = async (client, message) => {
             await fetch(urlnulis, {method: "GET"})
             .then(res => res.json())
             .then(async (json) => {
-                await client.sendFileFromUrl(from, json.result, 'Nulis.jpg', 'Nih anjim', id)
+                await client.sendFileFromUrl(from, json.result, 'Nulis.jpg', 'Nih gan', id)
             }).catch(e => client.reply(from, "Error: "+ e));
             break
         case '!ytmp3':
@@ -435,12 +435,12 @@ module.exports = msgHandler = async (client, message) => {
                 const author = encodeURIComponent(arg[2])
                 const theme = encodeURIComponent(arg[3])
                 await quotemaker(quotes, author, theme).then(amsu => {
-                    client.sendFile(from, amsu, 'quotesmaker.jpg','neh...').catch(() => {
+                    client.sendFile(from, amsu, 'quotesmaker.jpg','nih gan...').catch(() => {
                        client.reply(from, mess.error.Qm, id)
                     })
                 })
             } else {
-                client.reply(from, 'Usage: \n!quotemaker |teks|watermark|theme\n\nEx :\n!quotemaker |ini contoh|bicit|random', id)
+                client.reply(from, 'Usage: \n!quotemaker |teks|watermark|theme\n\nEx :\n!quotemaker |ini contoh|anker|random', id)
             }
             break
         case '!linkgroup':
@@ -458,7 +458,7 @@ module.exports = msgHandler = async (client, message) => {
             const chatz = await client.getAllChatIds()
             for (let ids of chatz) {
                 var cvk = await client.getChatById(ids)
-                if (!cvk.isReadOnly) await client.sendText(ids, `[ Shinomiya Kaguya BOT Broadcast ]\n\n${msg}`)
+                if (!cvk.isReadOnly) await client.sendText(ids, `[ LOL~4NK3R-EROR ]\n\n${msg}`)
             }
             client.reply(from, 'Broadcast Success!', id)
             break
@@ -484,7 +484,7 @@ module.exports = msgHandler = async (client, message) => {
                 hehe += '╠➥'
                 hehe += ` @${groupMem[i].id.replace(/@c.us/g, '')}\n`
             }
-            hehe += '╚═〘 Shinomiya Kaguya BOT 〙'
+            hehe += '╚═〘 LOL ANKER BOT 〙'
             await client.sendTextWithMentions(from, hehe)
             break
         case '!kickall':
@@ -596,7 +596,7 @@ module.exports = msgHandler = async (client, message) => {
             break
         case '!getses':
             const sesPic = await client.getSnapshot()
-            client.sendFile(from, sesPic, 'session.png', 'Neh...', id)
+            client.sendFile(from, sesPic, 'session.png', 'Nih gan...', id)
             break
         case '!lirik':
             if (args.length == 1) return client.reply(from, 'Kirim perintah *!lirik [optional]*, contoh *!lirik aku bukan boneka*', id)
@@ -650,7 +650,7 @@ module.exports = msgHandler = async (client, message) => {
             break
         case '!loli':
             const loli = await get.get('https://mhankbarbar.herokuapp.com/api/randomloli').json()
-            client.sendFileFromUrl(from, loli.result, 'loli.jpeg', 'Lolinya om', id)
+            client.sendFileFromUrl(from, loli.result, 'loli.jpeg', 'Nih gan...', id)
             break
         case '!waifu':
             const waifu = await get.get(`https://mhankbarbar.herokuapp.com/api/waifu?apiKey=${apiKey}`).json()
